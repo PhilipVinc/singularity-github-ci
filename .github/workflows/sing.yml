@@ -23,7 +23,7 @@ jobs:
       - name: Build Container
         run: |
          ls 
-         sudo -E singularity build container.sif ${{ matrix.changed_file }}
+         singularity build container.sif Singularity
          tag=$(echo "${recipe/Singularity\./}")
          if [ "$tag" == "Singularity" ]; then
            tag=latest
