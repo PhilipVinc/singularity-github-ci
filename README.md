@@ -2,6 +2,7 @@
 
 ![img/sregistry-github-small.png](img/sregistry-github-small.png)
 
+
 This is a simple example of how you can achieve:
 
  - version control of your recipes
