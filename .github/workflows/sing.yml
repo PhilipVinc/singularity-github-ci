@@ -1,4 +1,4 @@
-name: Singularity Build (native)
+name: Singularity Build (special)
 on: 
   push:
     # Edit the branches here if you want to change deploy behavior
@@ -7,11 +7,14 @@ on:
       - master
 
   # Do the builds on all pull requests (to test them)
-  pull_request: []
+  pull_request:
 
 jobs:
-  build:
-    name: Check ${{ matrix.changed_file }}
+  build-test-containers:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    name: "Compile evrything"
     steps:
       - uses: actions/checkout@v2
       - uses: eWaterCycle/setup-singularity@v7
